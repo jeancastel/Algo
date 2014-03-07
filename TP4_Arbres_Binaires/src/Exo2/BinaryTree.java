@@ -20,20 +20,16 @@ public class BinaryTree <E>{
 		
 		//Création de l'arbre
 		
-//		BinaryTree<DisquePrefere> D1 = new BinaryTree<>(new DisquePrefere("Album 4","Artiste4",5));
-//		BinaryTree<DisquePrefere> D2 = new BinaryTree<>(new DisquePrefere("Album 2","Artiste2",153),D1,null);
-//		BinaryTree<DisquePrefere> D3 = new BinaryTree<>(new DisquePrefere("Album 6","Artiste6",0));
-//		BinaryTree<DisquePrefere> D4 = new BinaryTree<>(new DisquePrefere("Album 5","Artiste5",19),D3, null);
-//		BinaryTree<DisquePrefere> D5 = new BinaryTree<>(new DisquePrefere("Album 7","Artiste7",7));
-//		BinaryTree<DisquePrefere> D6 = new BinaryTree<>(new DisquePrefere("Album 3","Artiste3",57),D4,D5);
-//		BinaryTree<DisquePrefere> D7 = new BinaryTree<>(new DisquePrefere("Album 1","Artiste1",5),D2,D6);
-//		D7.affichagePrefixe();
-		
-		BinaryTree<Integer> I1 = new BinaryTree<>(10);
-		BinaryTree<Integer> I2 = new BinaryTree<>(20, I1, null);
-		BinaryTree<Integer> I3 = new BinaryTree<>(30, null, I2);
+		BinaryTree<DisquePrefere> D1 = new BinaryTree<>(new DisquePrefere("Album 4","Artiste4",5));
+		BinaryTree<DisquePrefere> D2 = new BinaryTree<>(new DisquePrefere("Album 2","Artiste2",153),D1,null);
+		BinaryTree<DisquePrefere> D3 = new BinaryTree<>(new DisquePrefere("Album 6","Artiste6",0));
+		BinaryTree<DisquePrefere> D4 = new BinaryTree<>(new DisquePrefere("Album 5","Artiste5",19),D3, null);
+		BinaryTree<DisquePrefere> D5 = new BinaryTree<>(new DisquePrefere("Album 7","Artiste7",7));
+		BinaryTree<DisquePrefere> D6 = new BinaryTree<>(new DisquePrefere("Album 3","Artiste3",57),D4,D5);
+		BinaryTree<DisquePrefere> D7 = new BinaryTree<>(new DisquePrefere("Album 1","Artiste1",5),D2,D6);
+		D7.affichagePrefixe();
 
-		if (estAbr(I3)) System.out.println(I3.getElement() + " est un ABR !");
+		if (estAbr(D1)) System.out.println("D1 est un ABR !");
 	}
 	
 	public E getElement(){

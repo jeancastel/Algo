@@ -1,6 +1,6 @@
 package Exo2;
 
-public class DisquePrefere extends Disque implements Comparable<Disque>{
+public class DisquePrefere extends Disque implements Comparable<DisquePrefere>{
 
 	public DisquePrefere(String titre, String auteur, int nbEcoutes) {
 		super(titre, auteur, nbEcoutes);
@@ -8,7 +8,7 @@ public class DisquePrefere extends Disque implements Comparable<Disque>{
 	}
 
 	@Override
-	public int compareTo(Disque o) {
+	public int compareTo(DisquePrefere o) {
 		// TODO Auto-generated method stub
 		return (this.getEcoutes()-o.getEcoutes());
 	}
