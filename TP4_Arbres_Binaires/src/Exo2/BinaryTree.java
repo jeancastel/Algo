@@ -1,6 +1,7 @@
 package Exo2;
 
 public class BinaryTree <E>{
+	
 	private E _elmt;
 	private BinaryTree<E> _leftTree=null;
 	private BinaryTree<E> _rightTree=null;
@@ -14,16 +15,25 @@ public class BinaryTree <E>{
 		_leftTree = lt;
 		_rightTree = rt;
 	}
+	
 	public static void main(String []args){
-		//Cr�ation de l'arbre
-		BinaryTree<Disque> D1= new BinaryTree<>(new Disque("Album 4","Artiste4",5));
-		BinaryTree<Disque> D2= new BinaryTree<>(new Disque("Album 2","Artiste2",153),D1,null);
-		BinaryTree<Disque> D3= new BinaryTree<>(new Disque("Album 6","Artiste6",0));
-		BinaryTree<Disque> D4= new BinaryTree<>(new Disque("Album 5","Artiste5",19),D3, null);
-		BinaryTree<Disque> D5= new BinaryTree<>(new Disque("Album 7","Artiste7",7));
-		BinaryTree<Disque> D6= new BinaryTree<>(new Disque("Album 3","Artiste3",57),D4,D5);
-		BinaryTree<Disque> D7= new BinaryTree<>(new Disque("Album 1","Artiste1",5),D2,D6);
-		D7.affichagePrefixe();
+		
+		//Création de l'arbre
+		
+//		BinaryTree<DisquePrefere> D1 = new BinaryTree<>(new DisquePrefere("Album 4","Artiste4",5));
+//		BinaryTree<DisquePrefere> D2 = new BinaryTree<>(new DisquePrefere("Album 2","Artiste2",153),D1,null);
+//		BinaryTree<DisquePrefere> D3 = new BinaryTree<>(new DisquePrefere("Album 6","Artiste6",0));
+//		BinaryTree<DisquePrefere> D4 = new BinaryTree<>(new DisquePrefere("Album 5","Artiste5",19),D3, null);
+//		BinaryTree<DisquePrefere> D5 = new BinaryTree<>(new DisquePrefere("Album 7","Artiste7",7));
+//		BinaryTree<DisquePrefere> D6 = new BinaryTree<>(new DisquePrefere("Album 3","Artiste3",57),D4,D5);
+//		BinaryTree<DisquePrefere> D7 = new BinaryTree<>(new DisquePrefere("Album 1","Artiste1",5),D2,D6);
+//		D7.affichagePrefixe();
+		
+		BinaryTree<Integer> I1 = new BinaryTree<>(10);
+		BinaryTree<Integer> I2 = new BinaryTree<>(20, I1, null);
+		BinaryTree<Integer> I3 = new BinaryTree<>(30, null, I2);
+
+		if (estAbr(I3)) System.out.println(I3.getElement() + " est un ABR !");
 	}
 	
 	public E getElement(){
@@ -37,13 +47,35 @@ public class BinaryTree <E>{
 	public BinaryTree<E> getRight(){
 		return _rightTree;
 	}
+	
+	// affiche les éléments du BT
+	
 	public void affichagePrefixe(){
+		
 		System.out.println(this.getElement().toString());
+		
 		if(this.getLeft()!=null || this.getRight()!=null){
+			
 			this.getLeft().affichagePrefixe();
+			
 			if(this.getRight()!=null){
+				
 				this.getRight().affichagePrefixe();
 			}
 		}
-	}	
+	}
+	
+	public static <F extends Comparable <F>> boolean estAbr(BinaryTree<F> bt){
+		
+		if(bt.getLeft() != null){
+			if(estAbr(bt.getLeft()) == false) return false;
+		}
+		
+		else if  (bt.getRight() != null){
+			if(estAbr(bt.getRight()) == false) return false;
+		}
+		
+		return true;
+	}
+	
 }
