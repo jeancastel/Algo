@@ -44,6 +44,19 @@ public class BinaryTree <E>{
 		return _rightTree;
 	}
 	
+	public BinaryTree<DisquePrefere> getMax(){
+		
+		while(this.getLeft() != null){
+			this.getLeft().getMax();
+		}
+		
+		return this.getElement();
+	}
+	
+	public BinaryTree<E> getMin(){
+		return _rightTree;
+	}
+	
 	// affiche les éléments du BT
 	
 	public void affichagePrefixe(){
@@ -73,5 +86,7 @@ public class BinaryTree <E>{
 		
 		return true;
 	}
+	
+	
 	
 }
